@@ -1,19 +1,16 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
 import { LoaderProps } from './Loader.h';
 
-class Loader extends PureComponent<LoaderProps> {
-
-  render() {
-    const {
-      size,
-      backBarWidth,
-      backBarColor,
-      progressBarWidth,
-      progressBarColor,
-      percent,
-    } = this.props;
-
+const Loader: React.FC<LoaderProps> = ({
+    size,
+    backBarWidth,
+    backBarColor,
+    progressBarWidth,
+    progressBarColor,
+    percent,
+  }) => {
+    console.log('render');
     const center = size / 2;
 
     const hexRegExp = /#[0-9a-fA-F]{6}$/;
@@ -53,7 +50,6 @@ class Loader extends PureComponent<LoaderProps> {
         style={{ transition: 'stroke-dashoffset 1s linear' }}
       />
     </svg>;
-  }
 }
 
 export default Loader;
